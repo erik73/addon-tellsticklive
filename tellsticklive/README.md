@@ -6,14 +6,15 @@ TellStick and TellStick Duo service with a possibility to export devices to Tell
 
 ## About
 
-This add-on is a modification of the official TellStick addon. 
-It adds the ability to have your devices and sensors published Telldus Live. 
-See the official addon documentation for details on device setup. 
+This add-on is a modification of the official TellStick addon.
+It adds the ability to have your devices and sensors published Telldus Live.
+See the official addon documentation for details on device setup.
 
 ## Installation
 
 Follow these steps to get the add-on installed on your system:
-1. Add the repository https://github.com/erik73/hassio-addons. 
+
+1. Add the repository https://github.com/erik73/hassio-addons.
 2. Find the "TellStick with Telldus Live" add-on and click it.
 3. Click on the "INSTALL" button.
 
@@ -37,10 +38,9 @@ file to enable the integration with the add-on.
 ```yaml
 # Example configuration.yaml entry
 tellstick:
-    host: 32b8266a-tellsticklive
-    port: [50800, 50801]
+  host: 32b8266a-tellsticklive
+  port: [50800, 50801]
 ```
-
 
 ## Configuration
 
@@ -109,10 +109,10 @@ Set the config option:
 enable_live: true
 ```
 
-Restart the addon and look in the addon log. 
+Restart the addon and look in the addon log.
 You will get a URL to visit in your browser to establish the connection
 between your Live account and this addon.
-That URL take you to Telldus Live, and you will be asked to login or create an account 
+That URL take you to Telldus Live, and you will be asked to login or create an account
 if you don´t have one.
 
 Also make sure you copy the string after uuid= in the URL, and create the following config entry:
@@ -125,6 +125,7 @@ The above is an example. Yours will look different.
 
 Finally, if you want to disable the local connection to HA, and get all of your devices from Telldus Live through the Telldus Live integration
 you have the set the following config option to false. In that case, you can remove all tellstick configuration from configuration.yaml.
+
 ```yaml
 enable_local: false
 ```
@@ -132,7 +133,6 @@ enable_local: false
 Once all this is complete, you can restart the addon, and your devices and sensors will appear
 in Telldus Live!
 It can take a restart or two before the sensor names show correctly in Telldus Live.
-
 
 ## Support
 

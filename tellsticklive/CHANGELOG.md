@@ -2,27 +2,27 @@
 
 ## 0.91
 
- - Update to latest telllive-py
+- Update to latest telllive-py
 
 ## 0.9
 
- - Update base image to Alpine 3.12
+- Update base image to Alpine 3.12
 
 ## 0.82
 
- - Updated Dockerfile to reduce number of layers.
+- Updated Dockerfile to reduce number of layers.
 
 ## 0.81
 
- - Renamed config options.
+- Renamed config options.
 
 ## 0.8
 
- - Enable Telldus Live-only mode.
+- Enable Telldus Live-only mode.
 
 ## 0.72
 
- - Added regexp to validate uuid string.
+- Added regexp to validate uuid string.
 
 ## 0.71
 
