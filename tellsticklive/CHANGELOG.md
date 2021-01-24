@@ -2,7 +2,7 @@
 
 ## 0.9.3
 
- - Move to new build system
+- Move to new build system
 
 ## 0.91
 
