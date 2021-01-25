@@ -17,9 +17,9 @@ See the official addon documentation for details on device setup.
 
 Follow these steps to get the add-on installed on your system:
 
-1.  Add the repository https://github.com/erik73/hassio-addons.
-2.  Find the "TellStick with Telldus Live" add-on and click it.
-3.  Click on the "INSTALL" button.
+Add the repository `https://github.com/erik73/hassio-addons`.
+Find the "TellStick with Telldus Live" add-on and click it.
+Click on the "INSTALL" button.
 
 ## How to use
 
@@ -27,17 +27,17 @@ Follow these steps to get the add-on installed on your system:
 
 After installation you are presented with a default and example configuration.
 
-1.  Adjust the add-on configuration to match your devices. See the official add-on
-    configuration options for details.
-2.  Save the add-on configuration by clicking the "SAVE" button.
-3.  Start the add-on.
+Adjust the add-on configuration to match your devices. See the official add-on
+configuration options for details.
+Save the add-on configuration by clicking the "SAVE" button.
+Start the add-on.
 
 ### Home Assistant integration
 
 You can run the addon in Live-only mode. In that case, you configure the TelldusLive
 integration i HA once you have everything set up.
-If you want to run in local mode (the same way the official addon runs), you will need to
-add internal communication details to the `configuration.yaml`
+If you want to run in local mode (the same way the official addon runs), you will
+need to add internal communication details to the `configuration.yaml`
 file to enable the integration with the add-on.
 
 ```yaml
@@ -121,7 +121,8 @@ between your Live account and this addon.
 That URL take you to Telldus Live, and you will be asked to login or create an account
 if you don´t have one.
 
-Also make sure you copy the string after uuid= in the URL, and create the following config entry:
+Also make sure you copy the string after uuid= in the URL, and create the following
+config entry:
 
 ```yaml
 live_uuid: de1333b5-154c-5342-87dc-6b7e0b2096ab
@@ -129,8 +130,10 @@ live_uuid: de1333b5-154c-5342-87dc-6b7e0b2096ab
 
 The above is an example. Yours will look different.
 
-Finally, if you want to disable the local connection to HA, and get all of your devices from Telldus Live through the Telldus Live integration
-you have the set the following config option to false. In that case, you can remove all tellstick configuration from configuration.yaml.
+Finally, if you want to disable the local connection to HA, and get all of your devices from
+Telldus Live through the Telldus Live integration
+you have the set the following config option to false. In that case, you can remove all
+tellstick configuration from configuration.yaml.
 
 ```yaml
 enable_local: false
