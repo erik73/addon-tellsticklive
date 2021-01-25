@@ -83,10 +83,11 @@ sensor you'd like to add to Telldus Live.
 
 #### Option: `sensors.id` (required)
 
-This is the id of the sensor. To find out what id to use you have to use the service call
-hassio.addon_stdin with the following data:
+This is the id of the sensor. To find out what id to use you have to use the
+service call hassio.addon_stdin with the following data:
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
-Look in the addon log, and you should be able to find the id, protocol and model for your sensors.
+Look in the addon log, and you should be able to find the id, protocol and model
+for your sensors.
 
 #### Option: `sensors.name` (required)
 
@@ -94,7 +95,8 @@ A name for your sensor, that will be displayed in Telldus Live.
 
 #### Option: `sensors.protocol` (required)
 
-This is the protocol the sensor uses. See above regarding service call to find this information.
+This is the protocol the sensor uses. See above regarding service call to find
+this information.
 
 #### Option: `sensors.model` (optional)
 
@@ -130,18 +132,19 @@ live_uuid: de1333b5-154c-5342-87dc-6b7e0b2096ab
 
 The above is an example. Yours will look different.
 
-Finally, if you want to disable the local connection to HA, and get all of your devices from
-Telldus Live through the Telldus Live integration
-you have the set the following config option to false. In that case, you can remove all
-tellstick configuration from configuration.yaml.
+Finally, if you want to disable the local connection to HA, and get all of
+your devices from Telldus Live through the Telldus Live integration
+you have the set the following config option to false. In that case, you
+can remove all tellstick configuration from configuration.yaml.
 
 ```yaml
 enable_local: false
 ```
 
-Once all this is complete, you can restart the addon, and your devices and sensors will appear
-in Telldus Live!
-It can take a restart or two before the sensor names show correctly in Telldus Live.
+Once all this is complete, you can restart the addon, and your devices and
+sensors will appear in Telldus Live!
+It can take a restart or two before the sensor names show correctly in
+Telldus Live.
 
 ## Support
 
