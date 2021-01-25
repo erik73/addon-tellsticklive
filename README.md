@@ -22,8 +22,6 @@ This add-on is a modification of the official TellStick addon.
 It adds the ability to have your devices and sensors published Telldus Live.
 See the official addon documentation for details on device setup.
 
-[:books: Read the full add-on documentation][docs]
-
 ## Support
 
 Got questions?
