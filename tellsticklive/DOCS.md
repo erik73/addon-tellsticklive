@@ -1,8 +1,11 @@
 # Home Assistant Add-on: TellStick with Telldus Live
 
-TellStick and TellStick Duo service with a possibility to export devices to Telldus Live!
+TellStick and TellStick Duo service with a possibility to export devices
+to Telldus Live!
 
-![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield]
+![Supports i386 Architecture][i386-shield]
 
 ## About
 
@@ -31,8 +34,10 @@ After installation you are presented with a default and example configuration.
 
 ### Home Assistant integration
 
-You can run the addon in Live-only mode. In that case, you configure the TelldusLive integration i HA once you have everything set up.
-If you want to run in local mode (the same way the official addon runs), you will need to add internal communication details to the `configuration.yaml`
+You can run the addon in Live-only mode. In that case, you configure the TelldusLive
+integration i HA once you have everything set up.
+If you want to run in local mode (the same way the official addon runs), you will need to
+add internal communication details to the `configuration.yaml`
 file to enable the integration with the add-on.
 
 ```yaml
@@ -46,8 +51,8 @@ tellstick:
 
 For device configuration, refer to the official addon instructions.
 
-All devices configured and working will be visible in your Telldus Live account when you have completed the
-configuration steps below.
+All devices configured and working will be visible in your Telldus Live account when
+you have completed the configuration steps below.
 
 To have your sensors visible in Telldus Live they have to be added to the configuration.
 Use the following service call to find the needed sensor information:
@@ -78,7 +83,8 @@ sensor you'd like to add to Telldus Live.
 
 #### Option: `sensors.id` (required)
 
-This is the id of the sensor. To find out what id to use you have to use the service call hassio.addon_stdin with the following data:
+This is the id of the sensor. To find out what id to use you have to use the service call
+hassio.addon_stdin with the following data:
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
 Look in the addon log, and you should be able to find the id, protocol and model for your sensors.
 
