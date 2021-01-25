@@ -1,7 +1,6 @@
 # Home Assistant Community Add-on: tellsticklive
 
 ![Project Stage][project-stage-shield]
-[![License][license-shield]](LICENSE.md)
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
