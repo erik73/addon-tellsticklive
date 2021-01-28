@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/erik73/base-python/amd64:0.5.2
+ARG BUILD_FROM=ghcr.io/erik73/base-python/amd64:0.5.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
