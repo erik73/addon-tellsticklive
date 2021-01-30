@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Tellsticklive
+# Home Assistant Add-on: Tellsticklive
 
 ![Project Stage][project-stage-shield]
 
