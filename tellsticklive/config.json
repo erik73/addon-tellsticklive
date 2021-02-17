@@ -11,6 +11,7 @@
   "options": {
     "enable_local": true,
     "enable_live": false,
+    "live_delay": 10,
     "devices": [
       {
         "id": 1,
@@ -48,6 +49,7 @@
     "enable_local": "bool",
     "enable_live": "bool",
     "live_uuid": "match(^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?",
+    "live_delay": "int",
     "devices": [
       {
         "id": "int(1,)",
