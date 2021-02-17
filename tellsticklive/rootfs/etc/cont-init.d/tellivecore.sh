@@ -6,7 +6,7 @@ TELLIVE="/etc/tellive.conf"
 UUID=$(bashio::config 'live_uuid')
 DELAY=$(bashio::config 'live_delay')
 
-sed -i 's/^sleep .*$/sleep '$DELAY'/' /etc/services.d/tellivecore/run
+sed -i 's/^    sleep 10 .*$/    sleep '$DELAY'/' /etc/services.d/tellivecore/run
 
 {
     echo "[settings]"
