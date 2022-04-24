@@ -60,5 +60,5 @@ SOFTWARE.
 [github-actions-shield]: https://github.com/erik73/addon-tellsticklive/workflows/CI/badge.svg
 [github-actions]: https://github.com/erik73/addon-tellsticklive/actions
 [issue]: https://github.com/erik73/addon-tellsticklive/issues
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
