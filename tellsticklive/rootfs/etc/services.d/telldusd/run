@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 
 if bashio::config.true "enable_local"; then
 bashio::log.info "Local enabled. Exposing sockets to HomeAssistant..."
