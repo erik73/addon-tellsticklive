@@ -31,7 +31,7 @@ RUN apk add --no-cache \
     && ln -s /usr/include/libftdi1/ftdi.h /usr/include/ftdi.h \
     && mkdir -p /usr/src \
     && cd /usr/src \
-    && git clone -b master --depth 1 https://github.com/telldus/telldus \
+    && git clone -b master --depth 1 https://github.com/erik73/telldus \
     && cd telldus/telldus-core \
     && sed -i \
         "/\<sys\/socket.h\>/a \#include \<sys\/select.h\>" \
