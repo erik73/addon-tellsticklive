@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 
 if bashio::config.true "enable_live" && bashio::config.has_value "live_uuid"; then
     bashio::log.info "Telldus Live enabled."
