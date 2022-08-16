@@ -1,6 +1,6 @@
 #!/command/with-contenv bashio
 
-s6-svc -O /var/run/s6/services/runonce
+s6-svc -O /run/s6/services/runonce
 
 if bashio::config.true "enable_live" && bashio::config.is_empty "live_uuid"; then
     bashio::log.info "UUID has not been entered in config. Generating registration URL"
