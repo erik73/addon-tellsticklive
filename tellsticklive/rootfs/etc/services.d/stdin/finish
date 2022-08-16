@@ -2,5 +2,9 @@
 # ==============================================================================
 # Restarts the STDIN service
 # ==============================================================================
+if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
+   bashio::log.warning "STDIN crashed, halting add-on"
+   /run/s6/basedir/bin/halt
+ fi
 
-bashio::log.info 'STDIN service was stopped, restarting...'
+ bashio::log.info "STDIN stopped, restarting..."
