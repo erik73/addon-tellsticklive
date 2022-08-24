@@ -1,1 +1,1 @@
-/etc/s6-overlay/scripts/stdin/stdin.sh
+exec /etc/s6-overlay/scripts/stdin/stdin.sh
