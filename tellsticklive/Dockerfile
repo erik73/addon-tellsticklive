@@ -23,7 +23,7 @@ RUN apk add --no-cache \
     && apk add --no-cache --virtual .build-dependencies \
         argp-standalone=1.5.0-r1 \
         build-base=0.5-r3 \
-        cmake=3.24.4-r0 \
+        cmake=3.26.4-r0 \
         confuse-dev=3.3-r3 \
         gcc=12.2.1_git20220924-r4 \
         git=2.38.5-r0 \
