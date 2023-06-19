@@ -21,7 +21,7 @@ RUN apk add --no-cache \
         libstdc++=12.2.1_git20220924-r4 \
         socat=1.7.4.4-r0 \
     && apk add --no-cache --virtual .build-dependencies \
-        argp-standalone=1.5.0-r0 \
+        argp-standalone=1.5.0-r1 \
         build-base=0.5-r3 \
         cmake=3.24.4-r0 \
         confuse-dev=3.3-r1 \
