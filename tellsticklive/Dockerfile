@@ -24,7 +24,7 @@ RUN apk add --no-cache \
         argp-standalone=1.5.0-r1 \
         build-base=0.5-r3 \
         cmake=3.24.4-r0 \
-        confuse-dev=3.3-r1 \
+        confuse-dev=3.3-r3 \
         gcc=12.2.1_git20220924-r4 \
         git=2.38.5-r0 \
         libftdi1-dev=1.5-r1 \
