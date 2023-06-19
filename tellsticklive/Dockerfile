@@ -19,7 +19,7 @@ RUN apk add --no-cache \
         confuse=3.3-r3 \
         libftdi1=1.5-r1 \
         libstdc++=12.2.1_git20220924-r4 \
-        socat=1.7.4.4-r0 \
+        socat=1.7.4.4-r1 \
     && apk add --no-cache --virtual .build-dependencies \
         argp-standalone=1.5.0-r1 \
         build-base=0.5-r3 \
