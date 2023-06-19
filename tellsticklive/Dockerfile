@@ -16,7 +16,7 @@ ENV LANG C.UTF-8
 
 # Install Telldus library for TellStick (using same approach as in hassio docker installation)
 RUN apk add --no-cache \
-        confuse=3.3-r1 \
+        confuse=3.3-r3 \
         libftdi1=1.5-r1 \
         libstdc++=12.2.1_git20220924-r4 \
         socat=1.7.4.4-r0 \
