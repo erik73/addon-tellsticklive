@@ -18,7 +18,7 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache \
         confuse=3.3-r4 \
         libftdi1=1.5-r4 \
-        libstdc++=13.2.1_git20240309-r0 \
+        libstdc++=14.2.0-r4 \
         socat=1.8.0.1-r0 \
     && apk add --no-cache --virtual .build-dependencies \
         argp-standalone=1.5.0-r1 \
