@@ -12,7 +12,7 @@ ARG BUILD_NAME
 ARG BUILD_REF
 ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 # Install Telldus library for TellStick (using same approach as in hassio docker installation)
 RUN apk add --no-cache \
