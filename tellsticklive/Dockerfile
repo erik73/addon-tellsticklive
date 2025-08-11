@@ -25,7 +25,7 @@ RUN apk add --no-cache \
         build-base=0.5-r3 \
         cmake=3.31.7-r1 \
         confuse-dev=3.3-r4 \
-        gcc=14.2.0-r4 \
+        gcc=14.2.0-r6 \
         git=2.47.2-r0 \
         libftdi1-dev=1.5-r4 \
     && ln -s /usr/include/libftdi1/ftdi.h /usr/include/ftdi.h \
