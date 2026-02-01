@@ -56,7 +56,7 @@ RUN apk add --no-cache \
     && rm -rf /usr/src/tellive-py \
     && cd /
 
-# Copy data for add-on
+# Copy data for app
 COPY rootfs /
 
 # Labels
