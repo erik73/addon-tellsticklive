@@ -21,7 +21,7 @@ Click on the "INSTALL" button.
 
 ## How to use
 
-### Starting the add-on
+### Starting the app
 
 After installation you are presented with an example configuration.
 
