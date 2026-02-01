@@ -12,7 +12,7 @@ on:
 
 permissions:
   actions: write
-  contents: read
+  contents: write
   packages: read
   security-events: write
 
