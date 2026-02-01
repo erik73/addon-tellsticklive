@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/erik73/base-python/amd64:5.0.3
+ARG BUILD_FROM=ghcr.io/erik73/base-python/amd64:5.0.4
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -57,7 +57,7 @@ RUN apk add --no-cache \
     && rm -rf /usr/src/tellive-py \
     && cd /
 
-# Copy data for add-on
+# Copy data for app
 COPY rootfs /
 
 # Labels

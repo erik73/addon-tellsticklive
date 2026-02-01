@@ -2,6 +2,10 @@
 # ==============================================================================
 # Take down the S6 supervision tree when tellive core fails
 # ==============================================================================
+if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
+   bashio::log.warning "tellive crashed, halting app"
+   /run/s6/basedir/bin/halt
+ fi
 
 # Exit code 0 means the service exited normally (e.g., not enabled)
 # In this case, exit 125 to prevent restart
