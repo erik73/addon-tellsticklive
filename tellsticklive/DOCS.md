@@ -84,7 +84,8 @@ Each device requires the following parameters:
 - **id**: Unique identifier for the device (integer starting from 1)
 - **name**: A friendly name for the device
 - **protocol**: The communication protocol (e.g., `arctech`, `everflourish`)
-- **model**: The device model type, optionally with brand suffix (e.g., `selflearning-switch`, `selflearning-switch:proove`)
+- **model**: The device model type, optionally with brand suffix
+(e.g., `selflearning-switch`, `selflearning-switch:proove`)
 - **house**: House code (format depends on protocol)
 - **unit**: Unit code
 
