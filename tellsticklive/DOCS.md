@@ -7,36 +7,36 @@ to Telldus Live!
 
 ## About
 
-This add-on is a modification of the official TellStick addon.
+This app is a modification of the official TellStick app.
 It adds the ability to have your devices and sensors published Telldus Live.
-See the official addon documentation for details on device setup.
+See the official app documentation for details on device setup.
 
 ## Installation
 
-Follow these steps to get the add-on installed on your system:
+Follow these steps to get the app installed on your system:
 
 Add the repository `https://github.com/erik73/hassio-addons`.
-Find the "TellStick with Telldus Live" add-on and click it.
+Find the "TellStick with Telldus Live" app and click it.
 Click on the "INSTALL" button.
 
 ## How to use
 
-### Starting the add-on
+### Starting the app
 
 After installation you are presented with an example configuration.
 
-Adjust the add-on configuration to match your devices. See the official add-on
+Adjust the app configuration to match your devices. See the official app
 configuration options for details.
-Save the add-on configuration by clicking the "SAVE" button.
-Start the add-on.
+Save the app configuration by clicking the "SAVE" button.
+Start the app.
 
 ### Home Assistant integration
 
-You can run the addon in Live-only mode. In that case, you configure the TelldusLive
+You can run the app in Live-only mode. In that case, you configure the TelldusLive
 integration in HA once you have everything set up.
-If you want to run in local mode (the same way the official addon runs), you will
+If you want to run in local mode (the same way the official app runs), you will
 need to add internal communication details to the `configuration.yaml`
-file to enable the integration with the add-on:
+file to enable the integration with the app:
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,7 +47,7 @@ tellstick:
 
 ## Configuration
 
-For device configuration, refer to the official addon instructions.
+For device configuration, refer to the official app instructions.
 
 All devices configured and working will be visible in your Telldus Live account when
 you have completed the configuration steps below.
@@ -68,11 +68,11 @@ sensors:
 ```
 
 Please note: After any changes have been made to the configuration,
-you need to restart the add-on for the changes to take effect.
+you need to restart the app for the changes to take effect.
 
 ### Option: `sensors` (required)
 
-Add one or more sensors entries to the add-on configuration for each
+Add one or more sensors entries to the app configuration for each
 sensor you'd like to add to Telldus Live.
 
 #### Option: `sensors.id` (required)
@@ -80,7 +80,7 @@ sensor you'd like to add to Telldus Live.
 This is the id of the sensor. To find out what id to use you have to use the
 service call hassio.addon_stdin with the following data:
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
-Look in the addon log, and you should be able to find the id, protocol and model
+Look in the app log, and you should be able to find the id, protocol and model
 for your sensors.
 
 #### Option: `sensors.name` (required)
@@ -98,7 +98,7 @@ The model of the sensor. See above regarding the service call to find this infor
 
 ## Service calls
 
-See the official addon instructions.
+See the official app instructions.
 
 ## How to enable the Telldus Live connection
 
@@ -111,9 +111,9 @@ Set the config option:
 enable_live: true
 ```
 
-Restart the addon and look in the addon log.
+Restart the app and look in the app log.
 You will get a URL to visit in your browser to establish the connection
-between your Live account and this addon.
+between your Live account and this app.
 That URL take you to Telldus Live, and you will be asked to login or create an account
 if you don´t have one.
 
@@ -135,7 +135,7 @@ can remove all tellstick configuration from configuration.yaml.
 enable_local: false
 ```
 
-Once all this is complete, you can restart the addon, and your devices and
+Once all this is complete, you can restart the app, and your devices and
 sensors will appear in Telldus Live!
 
 ```yaml
