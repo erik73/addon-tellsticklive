@@ -13,4 +13,4 @@ permissions:
 
 jobs:
   workflows:
-    uses: erik73/workflows/.github/workflows/lock.yaml@39cb0477f4c7a1ed28695c81e460f614a9993ab9 # v1.0.1
+    uses: erik73/workflows/.github/workflows/lock.yaml@1210697eaca92a13b6c4fee68d395bafd9102995 # v1.0.2
