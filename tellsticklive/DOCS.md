@@ -25,7 +25,7 @@ Click on the "INSTALL" button.
 
 After installation you are presented with an example configuration.
 
-1. Adjust the add-on configuration to match your devices (see Configuration
+1. Adjust the app configuration to match your devices (see Configuration
    section below)
 2. Save the add-on configuration by clicking the "SAVE" button
 3. Start the add-on
