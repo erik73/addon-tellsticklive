@@ -25,9 +25,10 @@ Click on the "INSTALL" button.
 
 After installation you are presented with an example configuration.
 
-1. Adjust the add-on configuration to match your devices (see Configuration section below)
-2. Save the add-on configuration by clicking the "SAVE" button
-3. Start the add-on
+1. Adjust the add-on configuration to match your devices (see Configuration
+section below)
+3. Save the add-on configuration by clicking the "SAVE" button
+4. Start the add-on
 
 ### Home Assistant integration
 
@@ -39,14 +40,15 @@ If you want to use the Telldus Live cloud service for all device control:
 
 1. Set `enable_local: false` in the add-on configuration
 2. Set `enable_live: true` and configure your `live_uuid`
-3. In Home Assistant, add the **Telldus Live** integration via Settings → Devices & Services
+3. In Home Assistant, add the **Telldus Live** integration via
+Settings → Devices & Services
 
 This method does NOT require any `configuration.yaml` entries.
 
 #### Option 2: Local TellStick Integration (Direct connection)
 
-If you want to run in local mode (direct connection to the TellStick hardware), you will
-need to add internal communication details to the `configuration.yaml`
+If you want to run in local mode (direct connection to the TellStick hardware),
+you will need to add internal communication details to the `configuration.yaml`
 file to enable the integration with the add-on:
 
 ```yaml
@@ -57,9 +59,9 @@ tellstick:
   port: [50800, 50801]
 ```
 
-**Finding Your Hostname**: Start the add-on and check the logs. When local mode is
-enabled, the logs will display the exact configuration you need to add to your
-`configuration.yaml`, including the correct hostname.
+**Finding Your Hostname**: Start the add-on and check the logs. When local 
+mode is enabled, the logs will display the exact configuration you need to add
+to your `configuration.yaml`, including the correct hostname.
 
 **IMPORTANT - Restart Sequence**: The add-on must be fully started BEFORE Home
 Assistant tries to connect. If you see errors like "Could not connect to the
@@ -74,8 +76,8 @@ Telldus Service (-6)", follow these steps:
 
 Configure your devices and sensors in the add-on configuration panel.
 
-All devices configured and working will be visible in your Telldus Live account when
-you have completed the configuration steps below.
+All devices configured and working will be visible in your Telldus Live account
+when you have completed the configuration steps below.
 
 ### Device Configuration
 
@@ -151,7 +153,8 @@ this information.
 
 #### Option: `sensors.model` (optional)
 
-The model of the sensor. See above regarding the service call to find this information.
+The model of the sensor. See above regarding the service call to
+find this information.
 
 ## Service calls
 
@@ -187,14 +190,16 @@ data:
     function: "list-sensors"
 ```
 
-**Finding your add-on slug:** The add-on slug is shown at the top of the add-on logs. 
-Look for a line like `Add-on: TellStick with Telldus Live` - the slug appears in the 
-system information section (e.g., `e9305338_tellsticklive`). Your slug will be different.
+**Finding your add-on slug:** The add-on slug is shown at the top of the 
+add-on logs. Look for a line like `Add-on: TellStick with Telldus Live` - the
+slug appears in the system information section (e.g., `e9305338_tellsticklive`).
+Your slug will be different.
 
 ## How to enable the Telldus Live connection
 
-Once you are happy with the devices and sensors configuration it is time to establish
-the connection to Telldus Live, and generate an UUID that will be used to connect.
+Once you are happy with the devices and sensors configuration it is time to
+establish the connection to Telldus Live, and generate an UUID that will be
+used to connect.
 
 Set the config option:
 
@@ -205,11 +210,11 @@ enable_live: true
 Restart the addon and look in the addon log.
 You will get a URL to visit in your browser to establish the connection
 between your Live account and this addon.
-That URL take you to Telldus Live, and you will be asked to login or create an account
-if you don´t have one.
+That URL take you to Telldus Live, and you will be asked to login or
+create an account if you don´t have one.
 
-Also make sure you copy the string after uuid= in the URL, and create the following
-config entry:
+Also make sure you copy the string after uuid= in the URL, and create the
+following config entry:
 
 ```yaml
 live_uuid: de1333b5-154c-5342-87dc-6b7e0b2096ab
@@ -247,9 +252,9 @@ to 10 seconds again.
 
 ### Error: "Could not connect to the Telldus Service (-6)"
 
-This error occurs when Home Assistant starts before the add-on is ready. The add-on
-needs to create its TCP bridges on ports 50800 and 50801 before Home Assistant can
-connect.
+This error occurs when Home Assistant starts before the add-on is ready.
+The add-on needs to create its TCP bridges on ports 50800 and 50801 before
+Home Assistant can connect.
 
 **Solution:**
 
@@ -258,15 +263,17 @@ connect.
 2. Restart Home Assistant: Settings → System → Restart
 3. The tellstick integration should now connect successfully
 
-**Tip:** This typically happens after a system reboot. In the future, after a reboot,
-wait 30-60 seconds for the add-on to fully start before restarting Home Assistant.
+**Tip:** This typically happens after a system reboot. In the future,
+after a reboot, wait 30-60 seconds for the add-on to fully start before
+restarting Home Assistant.
 
 ### No entities appearing in Home Assistant
 
 If you can control devices through Telldus Live but no entities appear in HA:
 
 1. **Check your integration type:**
-   - Using `enable_local: true`? You need the `tellstick:` config in `configuration.yaml`
+   - Using `enable_local: true`? You need the `tellstick:` config in
+`configuration.yaml`
    - Using `enable_local: false`? Use the Telldus Live integration instead
 
 2. **For local mode:** Make sure you have platform configurations:
@@ -298,13 +305,17 @@ If devices are configured but not appearing in your Telldus Live account:
 
 When configuring devices, note the following format rules:
 
-- **protocol**: Must be one of the supported protocols (e.g., `arctech`, `everflourish`, `fineoffset`)
-- **model**: The device model type, optionally with a brand suffix using colon notation
+- **protocol**: Must be one of the supported protocols
+(e.g., `arctech`, `everflourish`, `fineoffset`)
+- **model**: The device model type, optionally with a brand suffix using colon
+notation
 
-**Supported model base types:** `codeswitch`, `bell`, `selflearning-switch`, `selflearning-dimmer`,
-`selflearning`, `ecosavers`, `kp100`, `temperaturehumidity`, `temperature`
+**Supported model base types:** `codeswitch`, `bell`, `selflearning-switch`,
+`selflearning-dimmer`, `selflearning`, `ecosavers`, `kp100`,
+`temperaturehumidity`, `temperature`
 
-**Brand suffix format:** `<model>:<brand>` (e.g., `selflearning-switch:proove`, `selflearning-switch:nexa`)
+**Brand suffix format:** `<model>:<brand>` (e.g., `selflearning-switch:proove`,
+`selflearning-switch:nexa`)
 
 **Common mistake**: Do NOT put the model in the protocol field.
 
