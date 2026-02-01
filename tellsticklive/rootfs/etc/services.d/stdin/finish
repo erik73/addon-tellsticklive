@@ -1,6 +1,12 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Restarts the STDIN service
+# Handle STDIN service finish
 # ==============================================================================
 
-bashio::log.info 'STDIN service was stopped, restarting...'
+# Exit code 0 means the service exited normally
+# In this case, exit 125 to prevent immediate restart
+if [[ "${1}" -eq 0 ]]; then
+    exit 125
+fi
+
+bashio::log.info "STDIN service stopped with exit code ${1}, restarting..."

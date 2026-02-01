@@ -6,7 +6,18 @@
 bashio::log.info 'Starting the Home Assistant STDIN service...'
 
 # shellcheck disable=SC2162
-while read -r input; do
+while true; do
+    if ! read -r input < /proc/1/fd/0; then
+        # read failed (EOF or error), wait before retrying to avoid tight loop
+        sleep 1
+        continue
+    fi
+
+    # Skip empty input
+    if [[ -z "${input}" ]]; then
+        continue
+    fi
+
     # parse JSON value
     funct=$(bashio::jq "${input}" '.function')
     devid=$(bashio::jq "${input}" '.device // empty')
@@ -17,4 +28,4 @@ while read -r input; do
     else
         bashio::log.info "TellStick ${funct} success -> ${msg}"
     fi
-done < /proc/1/fd/0
+done
