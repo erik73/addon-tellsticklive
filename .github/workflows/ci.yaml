@@ -11,11 +11,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: read
-  contents: read
+  actions: write
+  contents: write
   packages: read
   security-events: write
 
 jobs:
   workflows:
-    uses: erik73/workflows/.github/workflows/app-ci.yaml@978862c4ae7d4cdfb63fb3e24dbb5ae9d99c0b2f # v1.0.0
+    uses: erik73/workflows/.github/workflows/app-ci.yaml@79ef9fce2918a52060c83c05de485e426205c9fa # v1.0.4

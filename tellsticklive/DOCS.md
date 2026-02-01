@@ -21,7 +21,7 @@ Click on the "INSTALL" button.
 
 ## How to use
 
-### Starting the add-on
+### Starting the app
 
 After installation you are presented with an example configuration.
 
@@ -41,7 +41,7 @@ If you want to use the Telldus Live cloud service for all device control:
 1. Set `enable_local: false` in the add-on configuration
 2. Set `enable_live: true` and configure your `live_uuid`
 3. In Home Assistant, add the **Telldus Live** integration via
-Settings → Devices & Services
+   Settings → Devices & Services
 
 This method does NOT require any `configuration.yaml` entries.
 
@@ -59,7 +59,7 @@ tellstick:
   port: [50800, 50801]
 ```
 
-**Finding Your Hostname**: Start the add-on and check the logs. When local 
+**Finding Your Hostname**: Start the add-on and check the logs. When local
 mode is enabled, the logs will display the exact configuration you need to add
 to your `configuration.yaml`, including the correct hostname.
 
@@ -87,7 +87,7 @@ Each device requires the following parameters:
 - **name**: A friendly name for the device
 - **protocol**: The communication protocol (e.g., `arctech`, `everflourish`)
 - **model**: The device model type, optionally with brand suffix
-(e.g., `selflearning-switch`, `selflearning-switch:proove`)
+  (e.g., `selflearning-switch`, `selflearning-switch:proove`)
 - **house**: House code (format depends on protocol)
 - **unit**: Unit code
 
@@ -172,6 +172,7 @@ You can control TellStick devices using the `hassio.addon_stdin` service call.
 ### Example service calls:
 
 Turn on device 1:
+
 ```yaml
 service: hassio.addon_stdin
 data:
@@ -182,6 +183,7 @@ data:
 ```
 
 List sensors:
+
 ```yaml
 service: hassio.addon_stdin
 data:
@@ -190,7 +192,7 @@ data:
     function: "list-sensors"
 ```
 
-**Finding your add-on slug:** The add-on slug is shown at the top of the 
+**Finding your add-on slug:** The add-on slug is shown at the top of the
 add-on logs. Look for a line like `Add-on: TellStick with Telldus Live` - the
 slug appears in the system information section (e.g., `e9305338_tellsticklive`).
 Your slug will be different.
@@ -273,17 +275,18 @@ If you can control devices through Telldus Live but no entities appear in HA:
 
 1. **Check your integration type:**
    - Using `enable_local: true`? You need the `tellstick:` config in
-`configuration.yaml`
+     `configuration.yaml`
    - Using `enable_local: false`? Use the Telldus Live integration instead
 
 2. **For local mode:** Make sure you have platform configurations:
+
    ```yaml
    switch:
      - platform: tellstick
-   
+
    light:
      - platform: tellstick
-   
+
    sensor:
      - platform: tellstick
    ```
@@ -306,9 +309,9 @@ If devices are configured but not appearing in your Telldus Live account:
 When configuring devices, note the following format rules:
 
 - **protocol**: Must be one of the supported protocols
-(e.g., `arctech`, `everflourish`, `fineoffset`)
+  (e.g., `arctech`, `everflourish`, `fineoffset`)
 - **model**: The device model type, optionally with a brand suffix using colon
-notation
+  notation
 
 **Supported model base types:** `codeswitch`, `bell`, `selflearning-switch`,
 `selflearning-dimmer`, `selflearning`, `ecosavers`, `kp100`,
@@ -320,17 +323,20 @@ notation
 **Common mistake**: Do NOT put the model in the protocol field.
 
 ❌ Wrong:
+
 ```yaml
 protocol: arctech:selflearning-switch
 ```
 
 ✓ Correct:
+
 ```yaml
 protocol: arctech
 model: selflearning-switch
 ```
 
 ✓ Also correct (with brand suffix):
+
 ```yaml
 protocol: arctech
 model: selflearning-switch:proove
