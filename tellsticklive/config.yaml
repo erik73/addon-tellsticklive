@@ -9,6 +9,8 @@ arch:
   - amd64
 startup: system
 init: false
+hassio_api: false
+homeassitant_api: false
 stdin: true
 usb: true
 options:
