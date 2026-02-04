@@ -9,7 +9,6 @@ arch:
   - amd64
 startup: system
 init: false
-homeassistant_api: false
 stdin: true
 usb: true
 options:
