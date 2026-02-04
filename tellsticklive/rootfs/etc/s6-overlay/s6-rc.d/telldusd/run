@@ -1,0 +1,53 @@
+#!/command/with-contenv bashio
+
+bashio::log.info "Loading Telldus service..."
+
+# Start telldusd in the background first so it creates the UNIX sockets
+/usr/local/sbin/telldusd --nodaemon &
+TELLDUSD_PID=$!
+
+# Wait for telldusd to create the UNIX sockets
+bashio::log.info "Waiting for telldusd sockets to be ready..."
+SOCKET_WAIT=0
+while [[ ! -S /tmp/TelldusClient ]] || [[ ! -S /tmp/TelldusEvents ]]; do
+    sleep 1
+    SOCKET_WAIT=$((SOCKET_WAIT + 1))
+    if [[ ${SOCKET_WAIT} -ge 60 ]]; then
+        bashio::log.error "Timeout waiting for telldusd sockets"
+        exit 1
+    fi
+    # Check if telldusd is still running
+    if ! kill -0 ${TELLDUSD_PID} 2>/dev/null; then
+        bashio::log.error "telldusd process died unexpectedly"
+        exit 1
+    fi
+done
+
+if [[ -S /tmp/TelldusClient ]] && [[ -S /tmp/TelldusEvents ]]; then
+    bashio::log.info "Telldusd sockets are ready"
+    
+    if bashio::config.true "enable_local"; then
+        bashio::log.info "Local enabled. Exposing sockets to HomeAssistant..."
+        socat TCP-LISTEN:50800,reuseaddr,fork UNIX-CONNECT:/tmp/TelldusClient &
+        socat TCP-LISTEN:50801,reuseaddr,fork UNIX-CONNECT:/tmp/TelldusEvents &
+        bashio::log.info "Socat TCP-to-UNIX bridges started on ports 50800 and 50801"
+        
+        # Log the hostname for users to use in their configuration.yaml
+        ADDON_HOSTNAME=$(hostname)
+        bashio::log.info "-----------------------------------------------------------"
+        bashio::log.info "TellStick service is ready for Home Assistant!"
+        bashio::log.info "Add this to your configuration.yaml:"
+        bashio::log.info ""
+        bashio::log.info "tellstick:"
+        bashio::log.info "  host: ${ADDON_HOSTNAME}"
+        bashio::log.info "  port: [50800, 50801]"
+        bashio::log.info ""
+        bashio::log.info "IMPORTANT: If you see 'Could not connect to Telldus Service'"
+        bashio::log.info "errors, you must RESTART Home Assistant after this add-on"
+        bashio::log.info "has fully started. Go to Settings -> System -> Restart."
+        bashio::log.info "-----------------------------------------------------------"
+    fi
+fi
+
+# Wait for telldusd to exit (keep the service running)
+wait ${TELLDUSD_PID}
