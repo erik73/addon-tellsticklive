@@ -49,10 +49,10 @@ SOFTWARE.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/erik73/addon-tellsticklive.svg
-[commits]: https://github.com/erik73/addon-tellsticklive/commits/main
-[github-actions-shield]: https://github.com/erik73/addon-tellsticklive/workflows/CI/badge.svg
-[github-actions]: https://github.com/erik73/addon-tellsticklive/actions
-[issue]: https://github.com/erik73/addon-tellsticklive/issues
+[commits-shield]: https://img.shields.io/github/commit-activity/y/erik73/app-tellsticklive.svg
+[commits]: https://github.com/erik73/app-tellsticklive/commits/main
+[github-actions-shield]: https://github.com/erik73/app-tellsticklive/workflows/CI/badge.svg
+[github-actions]: https://github.com/erik73/app-tellsticklive/actions
+[issue]: https://github.com/erik73/app-tellsticklive/issues
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg

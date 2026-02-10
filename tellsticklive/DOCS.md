@@ -27,8 +27,8 @@ After installation you are presented with an example configuration.
 
 1. Adjust the app configuration to match your devices (see Configuration
    section below)
-2. Save the add-on configuration by clicking the "SAVE" button
-3. Start the add-on
+2. Save the app configuration by clicking the "SAVE" button
+3. Start the app
 
 ### Home Assistant integration
 
@@ -38,7 +38,7 @@ You have two options for integrating with Home Assistant:
 
 If you want to use the Telldus Live cloud service for all device control:
 
-1. Set `enable_local: false` in the add-on configuration
+1. Set `enable_local: false` in the app configuration
 2. Set `enable_live: true` and configure your `live_uuid`
 3. In Home Assistant, add the **Telldus Live** integration via
    Settings → Devices & Services
@@ -49,32 +49,32 @@ This method does NOT require any `configuration.yaml` entries.
 
 If you want to run in local mode (direct connection to the TellStick hardware),
 you will need to add internal communication details to the `configuration.yaml`
-file to enable the integration with the add-on:
+file to enable the integration with the app:
 
 ```yaml
 # Example configuration.yaml entry
-# Replace YOUR_ADDON_HOSTNAME with the hostname shown in the add-on logs
+# Replace YOUR_APP_HOSTNAME with the hostname shown in the app logs
 tellstick:
-  host: YOUR_ADDON_HOSTNAME
+  host: YOUR_APP_HOSTNAME
   port: [50800, 50801]
 ```
 
-**Finding Your Hostname**: Start the add-on and check the logs. When local
+**Finding Your Hostname**: Start the app and check the logs. When local
 mode is enabled, the logs will display the exact configuration you need to add
 to your `configuration.yaml`, including the correct hostname.
 
-**IMPORTANT - Restart Sequence**: The add-on must be fully started BEFORE Home
+**IMPORTANT - Restart Sequence**: The app must be fully started BEFORE Home
 Assistant tries to connect. If you see errors like "Could not connect to the
 Telldus Service (-6)", follow these steps:
 
-1. Start the add-on and wait for the logs to show:
+1. Start the app and wait for the logs to show:
    `TellStick service is ready for Home Assistant!`
 2. Only then, restart Home Assistant (Settings → System → Restart)
 3. Check that the tellstick integration loads without errors
 
 ## Configuration
 
-Configure your devices and sensors in the add-on configuration panel.
+Configure your devices and sensors in the app configuration panel.
 
 All devices configured and working will be visible in your Telldus Live account
 when you have completed the configuration steps below.
@@ -127,11 +127,11 @@ sensors:
 ```
 
 Please note: After any changes have been made to the configuration,
-you need to restart the add-on for the changes to take effect.
+you need to restart the app for the changes to take effect.
 
 ### Option: `sensors` (required)
 
-Add one or more sensors entries to the add-on configuration for each
+Add one or more sensors entries to the app configuration for each
 sensor you'd like to add to Telldus Live.
 
 #### Option: `sensors.id` (required)
@@ -139,7 +139,7 @@ sensor you'd like to add to Telldus Live.
 This is the id of the sensor. To find out what id to use you have to use the
 service call hassio.addon_stdin with the following data:
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
-Look in the addon log, and you should be able to find the id, protocol and model
+Look in the app log, and you should be able to find the id, protocol and model
 for your sensors.
 
 #### Option: `sensors.name` (required)
@@ -176,7 +176,7 @@ Turn on device 1:
 ```yaml
 service: hassio.addon_stdin
 data:
-  addon: YOUR_ADDON_SLUG
+  addon: YOUR_APP_SLUG
   input:
     function: "on"
     device: 1
@@ -187,13 +187,13 @@ List sensors:
 ```yaml
 service: hassio.addon_stdin
 data:
-  addon: YOUR_ADDON_SLUG
+  addon: YOUR_APP_SLUG
   input:
     function: "list-sensors"
 ```
 
-**Finding your add-on slug:** The add-on slug is shown at the top of the
-add-on logs. Look for a line like `Add-on: TellStick with Telldus Live` - the
+**Finding your app slug:** The app slug is shown at the top of the
+app logs. Look for a line like `App: TellStick with Telldus Live` - the
 slug appears in the system information section (e.g., `e9305338_tellsticklive`).
 Your slug will be different.
 
@@ -209,9 +209,9 @@ Set the config option:
 enable_live: true
 ```
 
-Restart the addon and look in the addon log.
+Restart the app and look in the app log.
 You will get a URL to visit in your browser to establish the connection
-between your Live account and this addon.
+between your Live account and this app.
 That URL take you to Telldus Live, and you will be asked to login or
 create an account if you don´t have one.
 
@@ -233,7 +233,7 @@ can remove all tellstick configuration from configuration.yaml.
 enable_local: false
 ```
 
-Once all this is complete, you can restart the addon, and your devices and
+Once all this is complete, you can restart the app, and your devices and
 sensors will appear in Telldus Live!
 
 ```yaml
@@ -254,19 +254,19 @@ to 10 seconds again.
 
 ### Error: "Could not connect to the Telldus Service (-6)"
 
-This error occurs when Home Assistant starts before the add-on is ready.
-The add-on needs to create its TCP bridges on ports 50800 and 50801 before
+This error occurs when Home Assistant starts before the app is ready.
+The app needs to create its TCP bridges on ports 50800 and 50801 before
 Home Assistant can connect.
 
 **Solution:**
 
-1. Go to the add-on logs and wait until you see:
+1. Go to the app logs and wait until you see:
    `TellStick service is ready for Home Assistant!`
 2. Restart Home Assistant: Settings → System → Restart
 3. The tellstick integration should now connect successfully
 
 **Tip:** This typically happens after a system reboot. In the future,
-after a reboot, wait 30-60 seconds for the add-on to fully start before
+after a reboot, wait 30-60 seconds for the app to fully start before
 restarting Home Assistant.
 
 ### No entities appearing in Home Assistant
@@ -300,7 +300,7 @@ If devices are configured but not appearing in your Telldus Live account:
 
 1. Check that `enable_live: true` is set
 2. Verify your `live_uuid` is correctly configured
-3. Check the add-on logs for connection messages to Telldus Live
+3. Check the app logs for connection messages to Telldus Live
 4. If you recently added sensors, increase `live_delay` to 600 seconds to allow
    sensor discovery before the Live connection is established
 
@@ -351,6 +351,6 @@ You could [open an issue here][issue] GitHub.
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [conf]: http://developer.telldus.com/wiki/TellStick_conf
-[issue]: https://github.com/erik73/addon-tellsticklive/issues
+[issue]: https://github.com/erik73/app-tellsticklive/issues
 [protocol-list]: http://developer.telldus.com/wiki/TellStick_conf
 [repository]: https://github.com/erik73/hassio-addons
