@@ -137,7 +137,7 @@ sensor you'd like to add to Telldus Live.
 #### Option: `sensors.id` (required)
 
 This is the id of the sensor. To find out what id to use you have to use the
-service call hassio.addon_stdin with the following data:
+service call hassio.app_stdin with the following data:
 `{"addon":"32b8266a_tellsticklive","input":{"function":"list-sensors"}}`
 Look in the app log, and you should be able to find the id, protocol and model
 for your sensors.
@@ -158,7 +158,7 @@ find this information.
 
 ## Service calls
 
-You can control TellStick devices using the `hassio.addon_stdin` service call.
+You can control TellStick devices using the `hassio.app_stdin` service call.
 
 ### Available functions:
 
@@ -174,7 +174,7 @@ You can control TellStick devices using the `hassio.addon_stdin` service call.
 Turn on device 1:
 
 ```yaml
-service: hassio.addon_stdin
+service: hassio.app_stdin
 data:
   addon: YOUR_APP_SLUG
   input:
@@ -185,7 +185,7 @@ data:
 List sensors:
 
 ```yaml
-service: hassio.addon_stdin
+service: hassio.app_stdin
 data:
   addon: YOUR_APP_SLUG
   input:
