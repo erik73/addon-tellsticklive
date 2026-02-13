@@ -1,0 +1,8 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant App: Tellsticklive
+# Runs the crond deamon
+# ==============================================================================
+
+bashio::log.info "Starting Crond...."
+exec /usr/bin/crond -f
