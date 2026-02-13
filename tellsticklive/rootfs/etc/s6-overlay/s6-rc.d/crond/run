@@ -5,4 +5,4 @@
 # ==============================================================================
 
 bashio::log.info "Starting Crond...."
-exec /usr/bin/crond -f
+exec /usr/sbin/crond -f
