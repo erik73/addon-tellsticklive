@@ -14,6 +14,7 @@ usb: true
 options:
   enable_local: true
   enable_live: false
+  list_sensors: false
   live_delay: 10
   devices:
     - id: 1
@@ -40,6 +41,7 @@ options:
 schema:
   enable_local: bool
   enable_live: bool
+  list_sensors: bool
   live_uuid: match(^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?
   live_delay: int
   devices:

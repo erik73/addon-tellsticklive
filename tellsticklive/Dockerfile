@@ -12,7 +12,8 @@ ARG BUILD_NAME
 ARG BUILD_REF
 ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
-ENV LANG=C.UTF-8
+
+ENV S6_STAGE2_HOOK=/etc/s6-s2-hook/disable-services.sh
 
 # Install Telldus library for TellStick (using same approach as in hassio docker installation)
 RUN apk add --no-cache \

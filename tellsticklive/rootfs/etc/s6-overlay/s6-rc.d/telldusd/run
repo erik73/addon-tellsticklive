@@ -1,4 +1,8 @@
 #!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant App: Tellsticklive
+# Runs the Telldus daemon
+# ==============================================================================
 
 bashio::log.info "Loading Telldus service..."
 

@@ -1,0 +1,3 @@
+# Crontab
+# min   hour    day     month   weekday command
+*/1     *       *       *       *       run-parts /etc/periodic/1min
